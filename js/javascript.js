@@ -1,11 +1,16 @@
-let btnOpenMenu = document.querySelector("#open-menu");
-let btnClosenMenu = document.querySelector("#close-menu");
-let menu = document.querySelector("#mobile-menu");
+const navbar = document.querySelector("#navbar");
+const open = document.querySelector("#openmenu");
+const close = document.querySelector("#closemenu");
 
-btnOpenMenu.addEventListener("click", () => {
-    menu.classList.remove("disabled");
+openmenu.addEventListener ("click", () => {
+    navbar.classList.add("visible");
 })
 
-btnClosenMenu.addEventListener("click", () => {
-    menu.classList.add("disabled");
+closemenu.addEventListener ("click", () => {
+    navbar.classList.add("closing");
+    setTimeout(() => {
+        navbar.classList.remove("visible");
+        navbar.classList.remove("closing");
+    }, 300);
 })
+
